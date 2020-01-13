@@ -1,7 +1,7 @@
 import axios from "axios";
 
-let baseUrl = "http://localhost:3000/";
-// let baseUrl = 'http://157.245.119.153:3002/'
+//let baseUrl = "http://localhost:3000/";
+let baseUrl = 'http://155.138.204.10:3000/'
 // let baseUrl = 'http://lusencombustible.dyndns.org:3001'
 function post(url, data) {
   var promise = new Promise((resolve, reject) => {
