@@ -223,8 +223,9 @@ export default {
             this.show = false
           }, 1500);
           this.clean()
-          this.getTransactions()
           this.getSummary()
+          this.getTransactions()
+          
         } catch (error) {
           console.log(error)
         }
@@ -238,11 +239,11 @@ export default {
     },
     async getSummary(){
       try {
+        this.obj.total = 0
         let data = await http.get('v1/summary')
         for(let x = 0; x < data.data.data.data.length; x ++){
           if(data.data.data.data[x].currency === 'BitCoins'){
             this.obj.bitcoins = data.data.data.data[x].total
-            console.log(this.convertBitCoinToMxn(this.obj.bitcoins)) 
             this.obj.total = parseFloat(this.obj.total) + parseFloat(this.convertBitCoinToMxn(this.obj.bitcoins))
           }
           if(data.data.data.data[x].currency === 'Dolares'){
@@ -256,7 +257,6 @@ export default {
           if(data.data.data.data[x].currency === 'Yuans'){
             this.obj.yuan = data.data.data.data[x].total
             this.obj.total = parseFloat(this.obj.total) + parseFloat(this.convertYuanesToMxn(this.obj.yuan))
-
           }
         }
       } catch (error) {
