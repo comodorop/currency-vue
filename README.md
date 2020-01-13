@@ -1,5 +1,16 @@
 # my-app
 
+
+# Excecute container 
+
+```
+docker build -t vueapp .
+docker run -it -p 8080:8080 --rm --name vueappcurrency vueapp
+
+```
+
+
+
 ## Project setup
 ```
 npm install
