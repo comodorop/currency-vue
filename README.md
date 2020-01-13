@@ -2,6 +2,7 @@
 
 
 # Excecute container 
+Para iniciarl el proyecto solo basta ejecutar el siguiente comando en el contenedor
 
 ```
 docker build -t vueapp .
